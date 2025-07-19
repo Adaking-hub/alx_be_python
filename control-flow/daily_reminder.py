@@ -16,10 +16,10 @@ match priority:
     case _:
         reminder = f"UNKNOWN PRIORITY: {task}"
 
-# Check if the task is time-bound
+# Modify the reminder if time-bound
 if time_bound == "yes":
     reminder += " — that requires immediate attention today!"
 
 # Provide a Customized Reminder
-print("\nReminder:")
+print("Reminder:")
 print(reminder)
