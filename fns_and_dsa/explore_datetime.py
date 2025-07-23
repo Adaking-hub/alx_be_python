@@ -1,18 +1,21 @@
-import datetime
+# explore_datetime.py
+
+from datetime import datetime, timedelta  # Required format
 
 def display_current_datetime():
-    current_date = datetime.datetime.now()
-    print(f"Current Date and Time: {current_date.strftime('%Y-%m-%d %H:%M:%S')}")
-    return current_date
+    current_date = datetime.now()
+    formatted_date = current_date.strftime("%Y-%m-%d %H:%M:%S")
+    print(f"Current Date and Time: {formatted_date}")
+    return formatted_date  # Required to return the formatted date
 
-def calculate_future_date(current_date, number_of_days):
-    future_date = current_date + datetime.timedelta(days=number_of_days)
-    print(f"Future Date after {number_of_days} days: {future_date.strftime('%Y-%m-%d')}")
-    return future_date
+def calculate_future_date():
+    number_of_days = int(input("Enter the number of days to add: "))
+    current_date = datetime.now()
+    future_date = current_date + timedelta(days=number_of_days)
+    formatted_future = future_date.strftime("%Y-%m-%d")
+    print(f"Future Date: {formatted_future}")
+    return formatted_future
 
-# Part 1: Show current date and time
-current = display_current_datetime()
-
-# Part 2: Ask user for days and calculate future date
-number_of_days = int(input("Enter the number of days to add: "))
-calculate_future_date(current, number_of_days)
+# Call the functions
+display_current_datetime()
+calculate_future_date()
